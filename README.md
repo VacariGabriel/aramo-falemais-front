@@ -1,12 +1,11 @@
 # aramo-falemais
 
 ## Objetivo ?  
-A empresa de telefonia Aramo lançou o produto **FaleMais**. Um plano no qual o cliente pode adquirir um determinado pacote e assim tem minutos grátis, para a transparência com o cliente a Aramo decidiu criar um site para que as pessoas possam simular os valores das chamas dependendo do plano.
+A empresa de telefonia Aramo lançou o produto **FaleMais**. Um plano no qual o cliente pode adquirir um determinado pacote e assim ter minutos grátis, para a transparência com o cliente a Aramo decidiu criar um site para que as pessoas possam simular os valores das chamas dependendo do plano.
 
 ## Tecnologias usadas ?
 - Vuejs
-- HTML
-- CSS
+- Vuetify
 
 ## Como rodar o projeto ?
 
