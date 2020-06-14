@@ -55,7 +55,6 @@
                         v-model="values.plan"
                         :items="plansTitles"
                         item-text="name"
-                        item-value="freeMinutes"
                         label="Plano"
                     ></v-select>
                 </v-col>

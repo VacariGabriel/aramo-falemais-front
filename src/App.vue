@@ -5,11 +5,7 @@
     <v-main>
         <calculator :ddds="ddds" :plansTitles="plans" @showResult="values = $event, calculateValue(values)"/>
 
-        <result-calculator v-if="showResult"/>
-
-      <section class="mt-8">
-        <card :plans="plans" />
-      </section>
+        <result-calculator v-if="true"/>
     </v-main>
 
     <Footer />
@@ -19,7 +15,6 @@
 <script>
 import Header from './components/header/Header'
 import Calculator from './components/calculator/Calculator'
-import Card from './components/card/Card'
 import ResultCalculator from './components/resultCalculator/ResultCalculator'
 import Footer from './components/footer/Footer'
 import API from './services/api'
@@ -40,7 +35,6 @@ export default {
   components: {
     Header,
     Calculator,
-    Card,
     ResultCalculator,
     Footer
   },

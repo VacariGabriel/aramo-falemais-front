@@ -6,7 +6,6 @@
     class="d-flex justify-center"
   >
     <v-toolbar-title>Aramo - FaleMais</v-toolbar-title>
-
   </v-app-bar>
 </template>
 
