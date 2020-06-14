@@ -78,7 +78,10 @@ export default {
             },
             sourceRules: [v =>  !!v || 'Origem é obrigatório'],
             destinationRules: [v =>  !!v || 'Destino é obrigatório'],
-            callTimeRules: [v =>  !!v || 'Tempo de ligação é obrigatório'],
+            callTimeRules: [
+                v =>  !!v || 'Tempo de ligação é obrigatório', 
+                v => (v && v > 0) || 'Tempo de ligação não pode ser menor que zero'
+            ],
             planRules: [v =>  !!v || 'Plano é obrigatório'],
             problems: true,
             errorMessage: 'Desculpe! Estamos com problemas'
