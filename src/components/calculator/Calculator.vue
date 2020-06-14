@@ -84,31 +84,34 @@ export default {
 
     props:['ddds', 'plansTitles'],
 
-    methods: {
-        sourceErrors() {
-            const errors = []
-            errors.push('Origem é obrigatória');
-            return errors
-        },
-
-        destinationErrors() {
-            const errors = []
-            errors.push('Destino é obrigatório');
-            return errors
-        },
-
-        callTimeErrors() {
-            const errors = []
-            errors.push('Tempo de duração é obrigatório');
-            return errors
-        },
-
-        planErrors() {
-            const errors = []
-            errors.push('Plano é obrigatório');
-            return errors
-        },
-    }
+    computed: {
+        //sourceErrors() {
+        //    const errors = []
+        //
+        //    if (!this.values.source.$dirty) return errors
+        //
+        //    errors.push('Origem é obrigatória');
+        //    return errors
+        //},
+        //
+        //destinationErrors() {
+        //    const errors = []
+        //    errors.push('Destino é obrigatório');
+        //    return errors
+        //},
+        //
+        //callTimeErrors() {
+        //    const errors = []
+        //    errors.push('Tempo de duração é obrigatório');
+        //    return errors
+        //},
+        //
+        //planErrors() {
+        //    const errors = []
+        //    errors.push('Plano é obrigatório');
+        //    return errors
+        //},
+    },
 }
 </script>
 

@@ -10,7 +10,7 @@
         >
             <v-card-text>
                 <p class="display-1 mb-3">{{plan.name}}</p>
-                <p>Você tem {{plan.freeMinutes}} grátis</p>
+                <p>Você tem {{plan.freeMinutes}} minutos grátis</p>
                 <div class="text">{{plan.description}}</div>
             </v-card-text>
             <v-card-actions>
