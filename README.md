@@ -13,7 +13,7 @@ A empresa de telefonia Aramo lançou o produto **FaleMais**. Um plano no qual o 
 
 *Clone este repositório.*
 
-```cd aramo-falemais/```
+```cd aramo-falemais-front/```
 
 ```npm install```
 
