@@ -1,24 +1,25 @@
 # aramo-falemais
 
-## Project setup
-```
-yarn install
-```
+## Objetivo ?  
+A empresa de telefonia Aramo lançou o produto **FaleMais**. Um plano no qual o cliente pode adquirir um determinado pacote e assim ter minutos grátis, para a transparência com o cliente a Aramo decidiu criar um site para que as pessoas possam simular os valores das chamas dependendo do plano.
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+## Tecnologias usadas ?
+- Vuejs
+- Vuetify
 
-### Compiles and minifies for production
-```
-yarn build
-```
+## Como rodar o projeto ?
 
-### Lints and fixes files
-```
-yarn lint
-```
+**API esta hospedada no Heroku**
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+*Clone este repositório.*
+
+```cd aramo-falemais-front/```
+
+```yarn install```
+
+```yarn serve```
+
+
+#### API
+
+[Repositório da API](https://github.com/VacariGabriel/aramo-falemais-api).
