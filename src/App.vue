@@ -3,9 +3,20 @@
     <Header />
 
     <v-main>
-        <calculator :ddds="ddds" :plansTitles="plans" @showResult="values = $event, calculateValue(values)"/>
+        <div class="d-flex justify-center pa-6" v-if="problems">
+          <v-alert
+              dense
+              outlined
+              type="error"
+              width="350"
+          >
+              {{errorMessage}}
+          </v-alert>
+        </div>
 
-        <result-calculator v-if="true"/>
+        <calculator :ddds="ddds" :plansTitles="plans" @showResult="valuesToCalculate = $event, calculateValue(valuesToCalculate)"/>
+
+        <result-calculator :tariffsCalculated="tariffsCalculated" v-if="showResult"/>
     </v-main>
 
     <Footer />
@@ -23,7 +34,8 @@ export default {
   name: 'App',
   data: () => {
     return {
-      tariffs: '',
+      valuesToCalculate: '',
+      tariffsCalculated: '',
       showResult: false,
       ddds: [],
       plans: [],
@@ -62,14 +74,16 @@ export default {
   },
 
   methods: {
-    calculateValue(values) {
-      API.calculate(values)
+    calculateValue(valuesToCalculate) {
+      API.calculate(valuesToCalculate)
         .then(result => {
           if(!result.erro) {
+            console.log('entrei')
             this.problems = false
-            this.tariffs = result.tariffs;
-            this.showComponent = true 
+            this.tariffsCalculated = result.tariffs;
+            this.showResult = true 
           } else {
+            this.showResult = false
             this.errorMessage = result.erro
             this.problems = true
           }

@@ -10,9 +10,9 @@
         >
             <v-list-item three-line>
                 <v-list-item-content>
-                <v-list-item-title class="headline mb-2">Sem plano</v-list-item-title>
-                <div class="mb-4">R$60,00</div>
-                <v-list-item-subtitle>Você não tem minutos grátis</v-list-item-subtitle>
+                    <v-list-item-title class="headline mb-2">Sem plano</v-list-item-title>
+                    <div class="mb-4"> <strong>R${{tariffsCalculated.withoutPlan}}</strong> </div>
+                    <v-list-item-subtitle>Você não tem minutos grátis</v-list-item-subtitle>
                 </v-list-item-content>
             </v-list-item>
         </v-card>
@@ -27,8 +27,8 @@
             <v-list-item three-line>
                 <v-list-item-content>
                 <v-list-item-title class="headline mb-2">Com plano</v-list-item-title>
-                <div class="mb-4">R$60,00</div>
-                <v-list-item-subtitle>Você não tem minutos grátis</v-list-item-subtitle>
+                <div class="mb-4"> <strong> R${{tariffsCalculated.withPlan}} </strong></div>
+                <v-list-item-subtitle>Você economiza <strong>R${{tariffsCalculated.withoutPlan - tariffsCalculated.withPlan}}</strong></v-list-item-subtitle>
                 </v-list-item-content>
             </v-list-item>
         </v-card>
@@ -38,7 +38,7 @@
 
 <script>
 export default {
-    
+    props:['tariffsCalculated']
 }
 </script>
 

@@ -1,16 +1,5 @@
 <template>
     <v-flex class="flex-column pa-6">
-        <div class="d-flex justify-center" v-if="problems">
-            <v-alert
-                dense
-                outlined
-                type="error"
-                width="350"
-            >
-                {{errorMessage}}
-            </v-alert>
-        </div>
-
         <v-form>
             <v-row class="d-flex justify-center">
                 <v-col
@@ -59,8 +48,8 @@
                     ></v-select>
                 </v-col>
             </v-row>
-            <div class="d-flex justify-center">
-                <v-btn :width="200" dark color="green darken-4">Calcular</v-btn>
+            <div class="d-flex justify-center pa-6">
+                <v-btn :width="300" dark color="green darken-4" @click="submitForm">Calcular</v-btn>
             </div>
         </v-form>
     </v-flex>
@@ -83,6 +72,12 @@ export default {
 
     props:['ddds', 'plansTitles'],
 
+    methods: {
+        submitForm() {
+            this.$emit('showResult', this.values)
+        }
+    },
+
     computed: {
         //sourceErrors() {
         //    const errors = []
@@ -104,7 +99,7 @@ export default {
         //    errors.push('Tempo de duração é obrigatório');
         //    return errors
         //},
-        //
+        //  
         //planErrors() {
         //    const errors = []
         //    errors.push('Plano é obrigatório');
@@ -115,5 +110,7 @@ export default {
 </script>
 
 <style scoped>
-
+    h1 {
+        color: #66BB6A;
+    }
 </style>
