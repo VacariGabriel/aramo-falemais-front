@@ -1,6 +1,9 @@
 <template>
     <v-flex class="flex-column pa-6">
-        <v-form>
+        <v-form
+            ref="form"
+            lazy-validation
+        >
             <v-row class="d-flex justify-center">
                 <v-col
                     cols="6"
@@ -10,6 +13,8 @@
                         v-model="values.source"
                         :items="ddds"
                         label="Origem"
+                        :rules="sourceRules"
+                        required
                     ></v-select>
                 </v-col>
         
@@ -18,9 +23,11 @@
                     md="3"
                 >
                     <v-select
-                    v-model="values.destination"
-                    :items="ddds"
-                    label="Destino"
+                        v-model="values.destination"
+                        :items="ddds"
+                        label="Destino"
+                        :rules="destinationRules"
+                        required
                     ></v-select>
                 </v-col>
             </v-row>
@@ -30,9 +37,11 @@
                     md="3"
                 >
                     <v-text-field
-                    v-model="values.callTime"
-                    type="number"
-                    label="Minutos"
+                        v-model="values.callTime"
+                        type="number"
+                        label="Minutos"
+                        :rules="callTimeRules"
+                        required
                     ></v-text-field>
                 </v-col>
 
@@ -45,6 +54,8 @@
                         :items="plansTitles"
                         item-text="name"
                         label="Plano"
+                        :rules="planRules"
+                        required
                     ></v-select>
                 </v-col>
             </v-row>
@@ -65,6 +76,10 @@ export default {
                 callTime: '',
                 plan: ''
             },
+            sourceRules: [v =>  !!v || 'Origem é obrigatório'],
+            destinationRules: [v =>  !!v || 'Destino é obrigatório'],
+            callTimeRules: [v =>  !!v || 'Tempo de ligação é obrigatório'],
+            planRules: [v =>  !!v || 'Plano é obrigatório'],
             problems: true,
             errorMessage: 'Desculpe! Estamos com problemas'
         }
@@ -74,43 +89,13 @@ export default {
 
     methods: {
         submitForm() {
-            this.$emit('showResult', this.values)
+            if (this.$refs.form.validate()) {
+                this.$emit('showResult', this.values)
+            }
         }
-    },
-
-    computed: {
-        //sourceErrors() {
-        //    const errors = []
-        //
-        //    if (!this.values.source.$dirty) return errors
-        //
-        //    errors.push('Origem é obrigatória');
-        //    return errors
-        //},
-        //
-        //destinationErrors() {
-        //    const errors = []
-        //    errors.push('Destino é obrigatório');
-        //    return errors
-        //},
-        //
-        //callTimeErrors() {
-        //    const errors = []
-        //    errors.push('Tempo de duração é obrigatório');
-        //    return errors
-        //},
-        //  
-        //planErrors() {
-        //    const errors = []
-        //    errors.push('Plano é obrigatório');
-        //    return errors
-        //},
     },
 }
 </script>
 
 <style scoped>
-    h1 {
-        color: #66BB6A;
-    }
 </style>
